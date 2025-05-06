@@ -8,12 +8,12 @@
 <body>
     <h2>Home - Avaliação 02</h2>
 
-    <form action="produtos.php" method="post">
+    <form action="salvar.php" method="post">
         <label for="produto">Nome do produto: </label>
         <input type="text" name="produto" id="produto"><br>
         
         <label for="preco">Preço: </label>
-        <input type="number" name="preco" id="preco" step="0.01"><br>
+        <input type="number" name="preco" id="preco" step="0.1"><br>
 
         <label for="quantidade">Quantidade do lote: </label>
         <input type="number" name="quantidade" id="quantidade"><br>

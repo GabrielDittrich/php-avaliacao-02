@@ -37,8 +37,6 @@
 
     echo "<h3>Lista de produtos Cadastrados</h3>";
 
-
-
     echo "<table>";
     echo "<tr>";
     echo "<th>ID #</th>";
@@ -55,9 +53,9 @@
 
         echo "<tr>";
         echo "<td>" . $linha['id'] . "</td>";
-        echo "<td>: " . $linha["produto"] . "</td>";
-        echo "<td>: " . $linha["preco"] . "</td>";
-        echo "<td>: " . $linha["quantidade"] . "</td>";
+        echo "<td>" . $linha["produto"] . "</td>";
+        echo "<td>" . $linha["preco"] . "</td>";
+        echo "<td>" . $linha["quantidade"] . "</td>";
         echo "</tr>";
     }
     echo "</table>";

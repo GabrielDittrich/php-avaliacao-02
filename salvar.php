@@ -33,7 +33,7 @@
     // estabelecer a conexão com o banco de dados
     $conn = conectar_banco();
 
-    $sql = "INSERT INTO tb_produtos (produto, preco, quantidade) VALUE (?,?,?)";
+    $sql = "INSERT INTO tb_produtos (produto, preco, quantidade) VALUES (?, ?, ?)";
 
     $stmt = mysqli_prepare($conn, $sql);
 
@@ -43,7 +43,7 @@
 
     // bind (associação) dos parametros
     // Basicamente, vamos substituir as '?' pelos valores das variaveis
-    mysqli_stmt_bind_param($stmt, "sss", $produto, $preco, $quantidade);
+    mysqli_stmt_bind_param($stmt, "sdi", $produto, $preco, $quantidade);
 
     // Executa o comando e verifica o retorno
     if (mysqli_stmt_execute($stmt)) {
