@@ -2,16 +2,9 @@
 <html lang="pt-br">
 
 <head>
-    <style>
-        table,
-        th,
-        td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Produtos Cadastrados</title>
 </head>
 
@@ -24,7 +17,7 @@
 
     $conn = conectar_banco();
 
-    $query = "SELECT * FROM tb_produtos";
+    $query = "SELECT * FROM produtos";
 
     $resultado = mysqli_query($conn, $query);
 
@@ -52,8 +45,8 @@
 
         echo "<tr>";
         echo "<td>" . $linha['id'] . "</td>";
-        echo "<td>" . $linha["produto"] . "</td>";
-        echo "<td>" . $linha["preco"] . "</td>";
+        echo "<td>" . $linha["nome"] . "</td>";
+        echo "<td>R$ " . number_format($linha["preco"], 2, ',', '.') . "</td>";
         echo "<td>" . $linha["quantidade"] . "</td>";
         echo "</tr>";
     }

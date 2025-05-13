@@ -26,14 +26,14 @@
     require_once 'conexao.php'; // incluir arquivos de conexão
     
     // armazenar dados do form em variáveis locaix
-    $produto = $_POST['produto'];
-    $preco = $_POST['preco'];
+    $nome = $_POST['nome'];
+    $preco = number_format((float)$_POST['preco'], 2, '.', '');
     $quantidade = $_POST['quantidade'];
 
     // estabelecer a conexão com o banco de dados
     $conn = conectar_banco();
 
-    $sql = "INSERT INTO tb_produtos (produto, preco, quantidade) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO produtos (nome, preco, quantidade) VALUES (?, ?, ?)";
 
     $stmt = mysqli_prepare($conn, $sql);
 
@@ -43,7 +43,7 @@
 
     // bind (associação) dos parametros
     // Basicamente, vamos substituir as '?' pelos valores das variaveis
-    mysqli_stmt_bind_param($stmt, "sdi", $produto, $preco, $quantidade);
+    mysqli_stmt_bind_param($stmt, "sdi", $nome, $preco, $quantidade);
 
     // Executa o comando e verifica o retorno
     if (mysqli_stmt_execute($stmt)) {

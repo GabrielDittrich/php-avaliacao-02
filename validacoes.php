@@ -7,7 +7,7 @@ function form_nao_enviado()
 
 function existe_campos_em_branco($dados)
 {
-    return empty($dados['produto']) || empty($dados['preco']) || empty($dados['quantidade']);
+    return empty($dados['nome']) || empty($dados['preco']) || empty($dados['quantidade']);
 }
 
 ?>

@@ -10,8 +10,8 @@
     <h2>Home - Avaliação 02</h2>
 
     <form action="salvar.php" method="post">
-        <label for="produto">Nome do produto: </label>
-        <input type="text" name="produto" id="produto" required><br>
+        <label for="nome">Nome do produto: </label>
+        <input type="text" name="nome" id="nome" required><br>
         
         <label for="preco">Preço: </label>
         <input type="number" name="preco" id="preco" step="0.01" required><br>
@@ -21,5 +21,9 @@
 
         <button type="submit">Cadastrar</button>
     </form>
+
+    <p>
+        <a href="listar.php">Ver Clientes Cadastrados</a>
+    </p>
 </body>
 </html>
